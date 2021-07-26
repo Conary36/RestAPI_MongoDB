@@ -6,7 +6,7 @@ require('dotenv').config();
 
 
 //Import routes
-const postRoute = require('./routes/post');
+const postRoute = require('./routes/posts');
 
 //Middlewares
 app.use('/posts', postRoute);
@@ -25,10 +25,10 @@ app.get('/', (req, res) => {
 
 //Connect to DB
 mongoose.connect(process.env.DB_CONNECTION, 
-    { useNewUrlParser: true },{ useUnifiedTopology: true },()=>{
+    { useNewUrlParser: true },()=>{
     console.log('connected to DB');
 });
 
 
 //Start listening to server
-app.listen(3000);
+app.listen(5000);
