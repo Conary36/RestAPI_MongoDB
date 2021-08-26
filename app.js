@@ -9,7 +9,6 @@ require('dotenv').config();
 app.use(express.json());
 
 
-
 //Connect to DB
 mongoose.connect(
   process.env.DB_CONNECTION,
@@ -28,10 +27,12 @@ app.use('/posts', ()=>{
 });
  
 
-
 //Routes
 app.get('/', (req, res) => {
     res.send('Welcome to Home page!');
+});
+app.post('/posts', (req, res) => {
+    res.send('Welcome to Post page!');
 });
 
 

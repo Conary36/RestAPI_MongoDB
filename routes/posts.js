@@ -32,7 +32,18 @@ router.post('/', async (req, res) => {
             res.json({message: err.message});
         }
 
-    });
+});
+
+router.get('/:postId', async (req, res) => {
+    try{
+    const post = await Post.findById(req.params.postId);
+    res.json(post);
+    
+    }catch(err){
+        res.json(err.message);
+    }
+
+});
 
 
 module.exports = router;
